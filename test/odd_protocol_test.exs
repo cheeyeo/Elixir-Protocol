@@ -41,5 +41,6 @@ defmodule OddProtocolTest do
 
   test "custom animal inspect" do
     assert Protocol.assert_impl!(Inspect, Animal) == :ok
+    assert inspect(%Animal{hairy: false}) == Inspect.Animal.inspect(%Animal{hairy: false}, %Inspect.Opts{})
   end
 end
